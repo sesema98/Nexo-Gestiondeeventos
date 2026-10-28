@@ -1,0 +1,5 @@
+@model Evento
+@{ ViewData["Title"] = "Nuevo evento"; }
+<div class="page-header"><div><h1 class="page-title">Nuevo evento</h1><p class="page-subtitle">Completa los datos para publicar un evento.</p></div></div>
+<form asp-action="Create" method="post" class="surface form-card"><partial name="_Form"/><div class="d-flex gap-2 mt-4"><button class="btn btn-primary">Guardar evento</button><a asp-action="Index" class="btn btn-light">Cancelar</a></div></form>
+@section Scripts { <partial name="_ValidationScriptsPartial"/> }

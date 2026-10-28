@@ -1,0 +1,8 @@
+@model IEnumerable<Asistente>
+@{ ViewData["Title"] = "Asistentes"; }
+<div class="page-header"><div><h1 class="page-title">Asistentes</h1><p class="page-subtitle">Personas activas disponibles para nuevas inscripciones.</p></div><a asp-action="Create" class="btn btn-primary">＋ Nuevo asistente</a></div>
+@if (TempData["Mensaje"] is string mensaje) { <div class="alert alert-success">✓ @mensaje</div> }
+<div class="surface table-shell table-responsive"><table class="table"><thead><tr><th>Asistente</th><th>DNI</th><th>Correo</th><th>Teléfono</th></tr></thead><tbody>
+@foreach (var a in Model) { <tr><td><div class="record-title">@a.Nombres</div><div class="record-meta">Asistente activo</div></td><td class="text-nowrap">@a.Dni</td><td><a href="mailto:@a.Correo">@a.Correo</a></td><td>@(string.IsNullOrWhiteSpace(a.Telefono) ? "Sin registrar" : a.Telefono)</td></tr> }
+@if (!Model.Any()) { <tr><td colspan="4" class="empty-state">Todavía no hay asistentes activos.</td></tr> }
+</tbody></table></div>

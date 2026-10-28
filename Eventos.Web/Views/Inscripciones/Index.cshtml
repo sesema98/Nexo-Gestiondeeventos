@@ -1,0 +1,8 @@
+@model IEnumerable<Inscripcion>
+@{ ViewData["Title"] = "Inscripciones"; }
+<div class="page-header"><div><h1 class="page-title">Inscripciones</h1><p class="page-subtitle">Seguimiento de confirmaciones y cancelaciones.</p></div><a asp-action="Create" class="btn btn-primary">＋ Nueva inscripción</a></div>
+@if (TempData["Mensaje"] is string mensaje) { <div class="alert alert-success">✓ @mensaje</div> }
+<div class="surface table-shell table-responsive"><table class="table"><thead><tr><th>Evento</th><th>Asistente</th><th>Fecha de inscripción</th><th>Estado</th><th class="text-end">Acción</th></tr></thead><tbody>
+@foreach (var i in Model) { <tr><td><div class="record-title">@i.Evento.Titulo</div><div class="record-meta">@i.Evento.Fecha.ToString("dd/MM/yyyy")</div></td><td>@i.Asistente.Nombres</td><td>@i.FechaInscripcion.ToString("dd/MM/yyyy HH:mm")</td><td><span class="badge-soft @(i.Estado == "Confirmada" ? "badge-confirmada" : "badge-cancelada")">@i.Estado</span></td><td class="text-end">@if (i.Estado == "Confirmada") { <form asp-action="Cancelar" asp-route-id="@i.Id" method="post" class="d-inline"><button class="btn btn-sm btn-outline-danger">Cancelar</button></form> } else { <span class="record-meta">Sin acciones</span> }</td></tr> }
+@if (!Model.Any()) { <tr><td colspan="5" class="empty-state">Todavía no hay inscripciones.</td></tr> }
+</tbody></table></div>

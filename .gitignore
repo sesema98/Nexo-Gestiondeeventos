@@ -1,0 +1,25 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Configuración local y secretos
+**/appsettings.Development.json
+**/appsettings.Local.json
+
+# IDE y sistema
+.vs/
+.vscode/
+.idea/
+.DS_Store
+
+# Archivos temporales de análisis
+.analysis_lab11/
+
+# Registros
+*.log
+
+# Solo README como documentación Markdown del repositorio
+*.md
+!README.md

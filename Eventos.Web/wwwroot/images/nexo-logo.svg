@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">Nexo Eventos</title>
+  <defs>
+    <linearGradient id="g" x1="5" y1="4" x2="43" y2="45" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="14" fill="url(#g)"/>
+  <path d="M15 13v6M33 13v6M12.5 21h23" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <rect x="12.5" y="16" width="23" height="21" rx="5" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="m19 29 3.4 3.3 7-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
